@@ -8,7 +8,7 @@
  */
 
 function login() {
-  saveCurrentUser('JaneDoe');
+  saveCurrentUser('Alice Doe');
   refreshUserArea();
 }
 
@@ -78,6 +78,7 @@ function storeInWallet(verifiablePresentation) {
   // base64 encode the serialized contents (verifiable presentations)
   const serialized = btoa(JSON.stringify(walletContents));
   Cookies.set('walletContents', serialized, {path: '', secure: true, sameSite: 'None'});
+  console.log("Cookie: ", document.cookie)
 }
 
 function clearWalletDisplay() {

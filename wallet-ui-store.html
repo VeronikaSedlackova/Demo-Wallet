@@ -22,11 +22,10 @@
 <body>
 
 <div class="container">
-  <h5>Wallet store() event</h5>
+  <h5>Do you want to store the Credential in your wallet?</h5>
 
   <div class="card-panel hide" id="logged-in">
     <div id="confirm">
-      <p>Do you wish to store this credential?</p>
 
       <p><strong>type:</strong> <span id="credentialType"></span></p>
 
@@ -37,12 +36,13 @@
     </div>
 
     <div id="userArea" class="hide">
-      <p><strong>Logged in:</strong> <span id="username"></span></p>
-      <a class="waves-effect waves-light btn-small" id="logoutButton">Reset and Logout</a>
+      <p><strong>Logged in:</strong> <span id="username"></span><p>Wrong?
+      <a class="waves-effect waves-light btn-small" id="logoutButton">Reset and Logout</a></p></p>
 
-      <p><strong>Credential stored!</strong></p>
+      <br>
+      <p><b>Credential stored!</b></p>
 
-      <h6>Wallet Contents:</h6>
+      <h6><u>Wallet Content:</u></h6>
       <ol id="walletContents"></ol>
 
       <a class="waves-effect waves-light btn center" id="doneButton">Done</a>

@@ -22,20 +22,22 @@
 <body>
 
 <div class="container">
-  <h5>Wallet get() event</h5>
+  <h5>Demo Wallet</h5>
+  <p>Thalia is requesting the following information:</p>
 
   <div class="card-panel hide" id="logged-in">
     <div id="confirm">
-      <p>Origin <span id="requestOrigin"></span> is requesting information:</p>
 
-      <p><span id="requestReason"></span></p>
+      <b><span id="requestReason"></span></b>
     </div>
 
+    <br>
     <div id="userArea">
-      <p><strong>Logged in:</strong> <span id="username"></span></p>
-      <a class="waves-effect waves-light btn-small" id="logoutButton">Reset and Logout</a>
+      <p><strong>Logged in:</strong> <span id="username"></span><p>Wrong? 
+        <a class="waves-effect waves-light btn-small" id="logoutButton">Reset and Logout</a></p></p>
 
-      <h6>Wallet Contents:</h6>
+      <br>
+      <h6><u>Wallet Content:</u></h6>
       <ol id="walletContents"></ol>
     </div>
   </div>
@@ -47,7 +49,7 @@
 
     <ol>
       <li>Register a wallet with your browser (for example,
-        the <a href="https://chapi-demo-wallet.digitalbazaar.com/">Demo Wallet</a>).</li>
+        the <a href="https://127.0.0.1:8081/">Demo Wallet</a>).</li>
       <li>Click the <strong>Login</strong> button.</li>
       <li>Click on a Share button next to an appropriate credential.</li>
     </ol>
@@ -73,8 +75,6 @@
     const event = await WebCredentialHandler.receiveCredentialEvent();
 
     console.log('Wallet processing get() event:', event);
-
-    document.getElementById('requestOrigin').innerHTML = event.credentialRequestOrigin;
 
     const vp = event.credentialRequestOptions.web.VerifiablePresentation;
     const query = Array.isArray(vp.query) ? vp.query[0] : vp.query;
