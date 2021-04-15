@@ -170,6 +170,7 @@ function showDidDoc() {
         document.getElementsByClassName("showDidDoc")[0].style.display = "block";
         document.cookie = "activateCookieForDIDDoc=true";
       }
+      // add div with DID Document
       else {
         var divDidDoc = document.createElement('div');
         divDidDoc.className = 'showDidDoc';
@@ -183,6 +184,7 @@ function showDidDoc() {
         }
 
         var contentJSON = JSON.stringify(walletContents, null, ' ');
+        contentJSON = contentJSON.replace("\"http://example.edu/credentials/1872\": {\n", "")
         divDidDocPretty.textContent += contentJSON;
 
 
@@ -190,6 +192,7 @@ function showDidDoc() {
         document.getElementsByClassName('showDidDoc')[0].appendChild(divDidDocPretty);
     }
   }
+
   else {
       document.getElementsByClassName("showDidDoc")[0].style.display = "none";
       document.cookie = "activateCookieForDIDDoc=false";
