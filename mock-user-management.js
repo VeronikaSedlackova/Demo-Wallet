@@ -164,9 +164,7 @@ window.onbeforeunload = function(e) {
 function showDidDoc() {
 
     var cookieValue = document.cookie;
-
     if (!cookieValue.includes("activateCookieForDIDDoc=true")){
-
 
       if (cookieValue.includes("activateCookieForDIDDoc=false")){
         document.getElementsByClassName("showDidDoc")[0].style.display = "block";
@@ -193,16 +191,8 @@ function showDidDoc() {
     }
   }
   else {
-
-    if (document.getElementsByClassName("showDidDoc")[0]){
       document.getElementsByClassName("showDidDoc")[0].style.display = "none";
       document.cookie = "activateCookieForDIDDoc=false";
     }
-    else {
-      document.cookie = "activateCookieForDIDDoc=new";
-
-    }
-
-  }
 } 
 
