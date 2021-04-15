@@ -155,6 +155,10 @@ function resetCurrentUser() {
   Cookies.remove('username', {path: ''});
 }
 
+window.onbeforeunload = function(e) {
+  document.cookie = 'activateCookieForDIDDoc=; expires=' + "" + ';';
+};
+
 
 // Click on saved Credential 
 function showDidDoc() {
@@ -189,8 +193,16 @@ function showDidDoc() {
     }
   }
   else {
-    document.getElementsByClassName("showDidDoc")[0].style.display = "none";
-    document.cookie = "activateCookieForDIDDoc=false";
+
+    if (document.getElementsByClassName("showDidDoc")[0]){
+      document.getElementsByClassName("showDidDoc")[0].style.display = "none";
+      document.cookie = "activateCookieForDIDDoc=false";
+    }
+    else {
+      document.cookie = "activateCookieForDIDDoc=new";
+
+    }
+
   }
 } 
 
