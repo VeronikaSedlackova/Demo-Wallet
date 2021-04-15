@@ -60,9 +60,11 @@ function refreshUserArea({shareButton} = {}) {
 
 function loadWalletContents() {
   const walletContents = Cookies.get('walletContents');
+  console.log('walletContents: ', walletContents);
   if(!walletContents) {
     return null;
   }
+  console.log("Parse JSON Cookie: ", JSON.parse(atob(walletContents)));
   return JSON.parse(atob(walletContents));
 }
 
@@ -152,4 +154,33 @@ function resetCurrentUser() {
   console.log('Clearing login cookie.');
   Cookies.remove('username', {path: ''});
 }
+
+
+
+// Click on saved Credential 
+function showDidDoc() {
+
+    var cookieValue = document.cookie;
+
+    if (!cookieValue.includes("activateCookieForDIDDoc=true")){
+      var divDidDoc = document.createElement('div');
+      divDidDoc.className = 'showDidDoc';
+      var divDidDocPretty = document.createElement('pre');      
+      document.getElementsByClassName('showDataDidDoc')[0].appendChild(divDidDoc);
+
+
+      const walletContents = loadWalletContents();
+      if(!walletContents) {
+        return addToWalletDisplay({text: 'none'});
+      }
+
+      var contentJSON = JSON.stringify(walletContents, null, ' ');
+      divDidDocPretty.textContent += contentJSON;
+
+
+      document.cookie = "activateCookieForDIDDoc=true";
+      document.getElementsByClassName('showDidDoc')[0].appendChild(divDidDocPretty);
+
+    }
+} 
 

@@ -33,7 +33,7 @@
        <h6><b>Logged in: </b><span id="username"></span></h6>
         <br>
         <h6><u>Wallet Content:</u></h6>
-        <ol id="walletContents"></ol>
+        <ol id="walletContents" class="showDataDidDoc"></ol>
  
       <a class="waves-effect waves-light btn" id="logoutButton">Reset and Logout</a>
     </div>
@@ -64,6 +64,8 @@
   onDocumentReady(() => {
     document.getElementById('loginButton').addEventListener('click', login);
     document.getElementById('logoutButton').addEventListener('click', logout);
+    document.getElementById('walletContents').addEventListener('click', showDidDoc);
+
     refreshUserArea();
   });
 </script>
