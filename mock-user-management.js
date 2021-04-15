@@ -156,31 +156,41 @@ function resetCurrentUser() {
 }
 
 
-
 // Click on saved Credential 
 function showDidDoc() {
 
     var cookieValue = document.cookie;
 
     if (!cookieValue.includes("activateCookieForDIDDoc=true")){
-      var divDidDoc = document.createElement('div');
-      divDidDoc.className = 'showDidDoc';
-      var divDidDocPretty = document.createElement('pre');      
-      document.getElementsByClassName('showDataDidDoc')[0].appendChild(divDidDoc);
 
 
-      const walletContents = loadWalletContents();
-      if(!walletContents) {
-        return addToWalletDisplay({text: 'none'});
+      if (cookieValue.includes("activateCookieForDIDDoc=false")){
+        document.getElementsByClassName("showDidDoc")[0].style.display = "block";
+        document.cookie = "activateCookieForDIDDoc=true";
       }
+      else {
+        var divDidDoc = document.createElement('div');
+        divDidDoc.className = 'showDidDoc';
+        var divDidDocPretty = document.createElement('pre');      
+        document.getElementsByClassName('showDataDidDoc')[0].appendChild(divDidDoc);
 
-      var contentJSON = JSON.stringify(walletContents, null, ' ');
-      divDidDocPretty.textContent += contentJSON;
+
+        const walletContents = loadWalletContents();
+        if(!walletContents) {
+          return addToWalletDisplay({text: 'none'});
+        }
+
+        var contentJSON = JSON.stringify(walletContents, null, ' ');
+        divDidDocPretty.textContent += contentJSON;
 
 
-      document.cookie = "activateCookieForDIDDoc=true";
-      document.getElementsByClassName('showDidDoc')[0].appendChild(divDidDocPretty);
-
+        document.cookie = "activateCookieForDIDDoc=true";
+        document.getElementsByClassName('showDidDoc')[0].appendChild(divDidDocPretty);
     }
+  }
+  else {
+    document.getElementsByClassName("showDidDoc")[0].style.display = "none";
+    document.cookie = "activateCookieForDIDDoc=false";
+  }
 } 
 
