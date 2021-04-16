@@ -91,6 +91,7 @@ function clearWalletDisplay() {
 
 function addToWalletDisplay({text, vc, button}) {
   const li = document.createElement('li');
+  li.style.cursor = "pointer";
 
   if(button) {
     const buttonNode = document.createElement('a');
