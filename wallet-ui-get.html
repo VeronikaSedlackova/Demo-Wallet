@@ -74,7 +74,7 @@
   async function handleGetEvent() {
     const event = await WebCredentialHandler.receiveCredentialEvent();
 
-    console.log('Wallet processing get() event:', event);
+    //console.log('Wallet processing get() event:', event);
 
     const vp = event.credentialRequestOptions.web.VerifiablePresentation;
     const query = Array.isArray(vp.query) ? vp.query[0] : vp.query;

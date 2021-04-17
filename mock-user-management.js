@@ -60,11 +60,11 @@ function refreshUserArea({shareButton} = {}) {
 
 function loadWalletContents() {
   const walletContents = Cookies.get('walletContents');
-  console.log('walletContents: ', walletContents);
+  //console.log('walletContents: ', walletContents);
   if(!walletContents) {
     return null;
   }
-  console.log("Parse JSON Cookie: ", JSON.parse(atob(walletContents)));
+  //console.log("Parse JSON Cookie: ", JSON.parse(atob(walletContents)));
   return JSON.parse(atob(walletContents));
 }
 
@@ -80,7 +80,7 @@ function storeInWallet(verifiablePresentation) {
   // base64 encode the serialized contents (verifiable presentations)
   const serialized = btoa(JSON.stringify(walletContents));
   Cookies.set('walletContents', serialized, {path: '', secure: true, sameSite: 'None'});
-  console.log("Cookie: ", document.cookie)
+  //console.log("Cookie: ", document.cookie)
 }
 
 function clearWalletDisplay() {
@@ -116,7 +116,7 @@ function addToWalletDisplay({text, vc, button}) {
         "type": "VerifiablePresentation",
         "verifiableCredential": vc
       }
-      console.log('wrapping and returning vc:', vp);
+      //console.log('wrapping and returning vc:', vp);
       button.sourceEvent
         .respondWith(Promise.resolve({dataType: 'VerifiablePresentation', data: vp}));
     });
@@ -185,7 +185,7 @@ function showDidDoc() {
         }
 
         var contentJSON = JSON.stringify(walletContents, null, ' ');
-        contentJSON = contentJSON.replace("\"http://example.edu/credentials/1872\": {\n", "")
+        contentJSON = contentJSON.replace("\"http://example/uniqueIDofTheCredentials/1872\": {\n", "")
         divDidDocPretty.textContent += contentJSON;
 
 
