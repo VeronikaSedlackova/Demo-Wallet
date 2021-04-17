@@ -1,50 +1,25 @@
 # Credential Handler API Demo Wallet
 
-> [Credential Handler API](https://w3c-ccg.github.io/credential-handler-api/) (CHAPI) demo wallet app
+## Original Project
 
-## Table of Contents
+This project is based on this repository: [Demo Wallet](https://github.com/digitalbazaar/chapi-demo-wallet)
 
-- [Background](#background)
-- [Usage](#usage)
-- [Install](#install)
-- [Security](#security)
-- [Contribute](#contribute)
-- [Commercial Support](#commercial-support)
-- [License](#license)
-
-Demos:
-
-1. [Demo Wallet](https://chapi-demo-wallet.digitalbazaar.com/)
-2. [Demo Issuer](https://chapi-demo-issuer.digitalbazaar.com/)
-3. [Demo Verifier](https://chapi-demo-verifier.digitalbazaar.com/)
 
 ## Background
 
-## Usage
+It represents one part of an example Verifiable Credential Flow:
+
+1. [An example university](https://github.com/VeronikaSedlackova/Demo-Issuer) (issuer)
+2. Digital Wallet (this project)
+3. [An example bookshop](https://github.com/VeronikaSedlackova/Demo-Verifier) (verifier)
+
 
 ## Local Development
 
 1. Run `npm install`
 2. Run `npm start`
-3. Visit `https://chapi-demo-wallet.localhost:8081`
+3. Visit `https://127.0.0.1:8083` or `https://192.168.178.23:8083`
 
-## Security
-
-See https://github.com/digitalbazaar/credential-handler-polyfill#security
-
-## Contribute
-
-See [the contribute file](https://github.com/digitalbazaar/bedrock/blob/master/CONTRIBUTING.md)!
-
-PRs accepted.
-
-Note: If editing the README, please conform to the
-[standard-readme](https://github.com/RichardLitt/standard-readme) specification.
-
-## Commercial Support
-
-Commercial support for this library is available upon request from
-Digital Bazaar: support@digitalbazaar.com
 
 ## License
 
