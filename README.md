@@ -26,10 +26,13 @@ It represents one part of an example Verifiable Credential flow:
 
 1. **Click on "Login"** to start a wallet session. (in Demo-Wallet)
      * The wallet content will be "none" 
+
 2. **Click on "Verifiable Credential"** to receive a Verifiable Credential with the claim to be a student there. (in Demo-Issuer)
      * Just follow further instructions 
-3. Optional: If you reload the Demo Wallet you will see the Verifiable Credential from the university. 
+
+3. **Optional:** If you reload the Demo Wallet you will see the Verifiable Credential from the university. 
      * You can click on the Verifiable Credential to see the corresponding DID Document
+
 4. **Click on "Bestätigen mit einem Verifiable Credential"** to share you student Verifiable Credential with the bookshop. (in Demo-Verifier)
      * Just follow further instructions and click "share" at the end
      * If you scroll to the bottom you will see the Verifiable Presentation of the Verifiable Credential 
