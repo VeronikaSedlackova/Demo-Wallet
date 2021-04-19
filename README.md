@@ -23,10 +23,10 @@ It represents one part of an example Verifiable Credential flow:
 
 ## Test procedure
 
-1. Click on "Login" to start a wallet session (in Demo-Wallet)
+1. Click on "Login" to start a wallet session. The wallet content will be "none" (in Demo-Wallet)
 2. Click on "Verifiable Credential" to receive a credential with the claim to be a student there. Just follow further instructions (in Demo-Issuer)
-3. Optional: If you reload the Demo Wallet you will see the credential from the university
-4. Click on "Bestätigen mit einem Verifiable Credential" to share you Student Credential with the bookshop. Just follow further instructions and click "share" at the end (in Demo-Verifier)
+3. Optional: If you reload the Demo Wallet you will see the credential from the university. You can click on the credential to see the corresponding DID Document
+4. Click on "Bestätigen mit einem Verifiable Credential" to share you Student Credential with the bookshop. Just follow further instructions and click "share" at the end. If you scroll to the bottom you will see the verifiable presentation of the verifiable credential (in Demo-Verifier)
 
 This project can issue only one Verifiable Credential for the user "Alice Doe". If you want to repeat the whole process, just delete the bookshop cookie and reload all pages. 
 
